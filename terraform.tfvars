@@ -1,0 +1,5 @@
+resource_group = "my-demo-rg"
+location       = "East US"
+cluster_name   = "my-demo-aks"
+dns_prefix     = "mydemoaks"
+datadog_api_key = "1e69c87eb8151728a2c066bd7aff84a91"
