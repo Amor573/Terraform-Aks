@@ -1,0 +1,24 @@
+# Terraform cache and state
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+crash.*.log
+.terraform.tfstate.lock.info
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Do not commit values containing secrets
+*.tfvars
+*.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+!.terraform.tfvars.example
+
+.DS_Store
+.vscode/
+.idea/
