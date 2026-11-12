@@ -85,3 +85,9 @@ terraform plan -destroy
 - Screenshot-free, sanitized evidence of an actual test deployment
 
 **Related expertise:** Azure • Terraform • Kubernetes • Helm • Observability • Infrastructure as Code.
+
+## Static CI and validation evidence
+
+[![Terraform static validation](https://github.com/Amor573/Terraform-Aks/actions/workflows/terraform-validation.yml/badge.svg)](https://github.com/Amor573/Terraform-Aks/actions/workflows/terraform-validation.yml)
+
+GitHub Actions now runs `terraform init -backend=false` and `terraform validate` on Terraform changes, without Azure credentials or billable resources. A green static check is **not a successful live apply**. See [architecture, security constraints and the proof checklist](docs/validation-and-evidence.md).
