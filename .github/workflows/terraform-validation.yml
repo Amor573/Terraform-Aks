@@ -1,0 +1,21 @@
+name: Terraform static validation
+on:
+  push:
+    paths:
+      - '**/*.tf'
+      - '.github/workflows/terraform-validation.yml'
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  terraform-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '1.9.8'
+      - name: Initialize without backend or Azure deployment
+        run: terraform init -backend=false -input=false -no-color
+      - name: Validate Terraform configuration
+        run: terraform validate -no-color
